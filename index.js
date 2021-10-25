@@ -12,12 +12,10 @@ app.use(responseTime())
 
 app.use('/posts', postRoute);
 
-
+app.get('/',(req,res)=> {
+    res.send('add the nth position to the url ')
+})
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, function(err){
-    if (err) console.log(err);
-    console.log("Server listening on PORT", PORT);
-});
-
+app.listen(PORT, () => console.log(`server running on ${PORT}`))
